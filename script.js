@@ -1,4 +1,4 @@
-import { navbar, footer } from "./components/components.js";
+import { navbar, footer, commentData, data} from "./components/components.js";
 
 var navbarArea = document.getElementById("navbar");
 navbarArea.innerHTML = navbar();
@@ -6,35 +6,10 @@ navbarArea.innerHTML = navbar();
 var footerArea = document.getElementById("footer");
 footerArea.innerHTML = footer();
 
-var data = [
-  {
-    name: "Online Consultation",
-    link: "./images/stethoscope.png",
-  },
-  {
-    name: "Hospital",
-    link: "./images/hospital-building.png",
-  },
-  {
-    name: "Medicine",
-    link: "./images/syringe.png",
-  },
-  {
-    name: "Pathology Tests",
-    link: "./images/blood-test.png",
-  },
-  {
-    name: "Nursing",
-    link: "./images/nurse.png",
-  },
-  {
-    name: "Emergency",
-    link: "./images/ambulance.png",
-  },
-];
-console.log(data);
+
 
 var cardsection=document.getElementById("cardsection")
+console.log(commentData)
 
 for(let i=0;i<data.length;i++){
     var card=document.createElement("div")
@@ -46,3 +21,5 @@ for(let i=0;i<data.length;i++){
     `
     cardsection.append(card)
 }
+
+var storiesCardSection=document.getElementById("stories-card-section")
