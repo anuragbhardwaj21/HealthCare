@@ -35,6 +35,7 @@ var data = [
 console.log(data);
 
 var cardsection=document.getElementById("cardsection")
+
 for(let i=0;i<data.length;i++){
     var card=document.createElement("div")
     card.setAttribute("id","m-b-card")
