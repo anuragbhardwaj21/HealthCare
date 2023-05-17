@@ -33,6 +33,7 @@ for (let i = 0; i < data.length; i++) {
 // -----------------------------------------------------------------------------green banner section ↓
 
 var greenbanner1 = document.getElementById("greenbanner1");
+
 for (let i = 0; i < 4; i++) {
   var greenBannerCard = document.createElement("div");
   greenBannerCard.setAttribute("id", "greenbanner1-card");

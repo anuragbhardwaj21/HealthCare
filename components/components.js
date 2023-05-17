@@ -12,6 +12,7 @@ function navbar() {
     </div>
     `;
 }
+
 function footer() {
   return `
     <div id="upperfooter">
@@ -206,6 +207,7 @@ var greenData1=[
     caption:"Awards"
   },
 ]
+
 function greenCard(i) {
   return `
   <p>${greenData1[i].numbers}</p>
