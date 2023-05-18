@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="nnn">
+   
+    <div id="main">
+          <!-- 1st box -->
+    <div class="container">
+       
+        <div class="container_login">
+            <div class="login_box">
+               
+              
+            <h2>Existing Customers</h2>
+                  <form>
+                   
+                    <label>*Email Address</label>
+                    <div class="c1">
+                    <input id="email" type="text" placeholder="Email Address" required>
+                     
+                </div>
+                    <label>*Password</label>
+                    <div>
+                    <input id="password" type="password" placeholder="Password" required>
+                   
+                </div>
+                 
+                    <input type="submit" value="SIGN IN" name="contine" id="button">
+                   
+                  </form>
+              </div>
+            </div>
+           
+        </div>
+         <!-- 1st box -->
+        <div class="container2">
+            <h2>New Customers</h2>
+           
+           <a href="registration.html" style="text-decoration: none;">
+              <input type="submit" value="REGISTER"  id="button1" > 
+            </a>
+        </div>
+        
+    </div>
+       
+    </div>
+</div>
+
+
+ <!-- navbar-->
+ 
+  <div id="cardsection"></div>
+  <div id="storiessection">
+   
+</div>
+</div>
+
+<div id="footer"></div>
+</body>
+<script type="module" src="script.js"></script>
+<script type="module" src="./components/components.js"></script>
+<script>
+    document.querySelector("form").addEventListener("submit", login);
+    var loginArr = JSON.parse(localStorage.getItem("userInfo")) || [];
+
+    function login(event) {
+      event.preventDefault();
+      var email = document.querySelector("#email").value;
+      var password = document.querySelector("#password").value;
+       
+      if (loginArr.length > 0) {
+        var loggedIn = false;
+        for (var i = 0; i < loginArr.length; i++) {
+          if (loginArr[i].email === email && loginArr[i].password === password) {
+            loggedIn = true;
+            break;
+          }
+        }
+        if (loggedIn) {
+          alert("Login Successfully Done");
+          window.location.href = "/index.html"
+} else {
+alert("Incorrect email or password or You Have Not Registered Yet");
+}
+} else {
+alert("Incorrect email or password or You Have Not Registered Yet");
+}
+}
+</script>
+
+</html>
