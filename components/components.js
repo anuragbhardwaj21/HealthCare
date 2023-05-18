@@ -6,6 +6,10 @@ function navbar() {
         <a href=""> Pharmacy</a>
         <a href=""> Other Services</a>
     </div>
+    <div id="searchNav">
+        <input type="text" id="searchInputNav" placeholder="Search Medicines">
+        <button id="searchNavButton"><img src="./images/search.png" alt=""></button>
+    </div>
     <div id="rightNavItems">
         <a href="../HealthCare/index.html">🏠</a>
         <a href="">Consult Now</a>

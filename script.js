@@ -49,6 +49,7 @@ let currentCard = null;
 
 function renderCard(card, cardContent) {
   if (card === currentCard) {
+    card.style.boxShadow = "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px";
     cardContent.style.display = "none";
     card.style.width = "2%";
 
@@ -59,6 +60,7 @@ function renderCard(card, cardContent) {
     currentCard = null;
   } else {
     if (currentCard) {
+      card.style.boxShadow = "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px";
       currentCard.querySelector(".card-content").style.display = "none";
       currentCard.style.width = "2%";
       currentCard.querySelector(".card-content").style.opacity = "0";
@@ -92,5 +94,32 @@ for (let i = 0; i < 12; i++) {
 
     cardContent.innerHTML = reviewCard(i);
     storiesCardSection.append(card);
+
+    if (index === 0) {
+      card.style.width = "18%";
+      cardContent.style.opacity = "1";
+      currentCard = card;
+    }
   })(i);
 }
+
+
+// -----------------------------------------------------------------------navbar search implimentation
+
+var baseApi="https://chiragajmeraapi.onrender.com/api/products?name="
+var searchInputNav = document.getElementById("searchInputNav");
+var searchNavButton = document.getElementById("searchNavButton");
+
+searchNavButton.addEventListener("click", function() {
+  var dataToBeSearched = searchInputNav.value;
+  // var apiUrl = `baseApi${encodeURIComponent(dataToBeSearched)}`;
+
+  fetch(`https://chiragajmeraapi.onrender.com/api/products?name=${dataToBeSearched}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.log("An error occurred:", error);
+    });
+});

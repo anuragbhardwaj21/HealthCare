@@ -30,6 +30,50 @@ body {
 #leftNavItems a:hover {
   color: var(--orange);
 }
+
+
+
+#searchNav {
+  border: .7px solid var(--green);
+  display: flex;
+  width: 20%;
+  padding: 0 0 0 1em;
+  border-top-left-radius: 3em;
+  border-bottom-left-radius: 3em;
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 3em;
+  box-shadow: rgba(60, 64, 67, 0.049) 0px 1px 2px 0px, rgba(60, 64, 67, 0.072) 0px 1px 3px 1px;
+  overflow: hidden;
+  /* align-items: center; */
+}
+#searchInputNav {
+  width: 75%;
+  border: none;
+  font-size:medium;
+  color: rgba(0, 0, 0, 0.698);
+}
+#searchInputNav:focus{
+  outline: none;
+}
+#searchNavButton {
+  width: 25%;
+  border-radius: 3em;
+  background-color: rgba(0, 0, 0, 0.102);
+  border: none;
+  transition: .3s;
+}
+#searchNavButton:hover{
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.21);
+}
+#searchNavButton img{
+  width: 35%;
+}
+
+
+
+
+
 #rightNavItems {
   width: 20%;
   display: flex;
@@ -115,7 +159,7 @@ td a:hover {
   position: relative;
   margin-bottom: 5em;
 }
-#divaboveimage{
+#divaboveimage {
   position: absolute;
   /* border: 1px solid; */
   width: 30%;
@@ -126,16 +170,16 @@ td a:hover {
   flex-direction: column;
   padding: 4em;
 }
-#divaboveimage p{
+#divaboveimage p {
   font-size: 4em;
   color: rgba(0, 0, 0, 0.807);
   margin-bottom: 0;
 }
-#divaboveimage span{
+#divaboveimage span {
   color: rgba(0, 0, 0, 0.807);
   margin-top: 2em;
 }
-#divaboveimage a{
+#divaboveimage a {
   margin-top: 2em;
   border: 0.7px solid #000000;
   padding: 15px 1.3em;
@@ -235,16 +279,21 @@ td a:hover {
   padding: 2em;
   height: 100%;
   overflow: hidden;
-  /* white-space: nowrap; */
-  /* text-overflow: ellipsis; */
   border-radius: 1em;
-  border: 0.8px solid var(--green);
+  border: 0.1px solid var(--green);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: width 0.7s ease;
+}
+.stories-card:hover{
+  cursor: pointer;
 }
 
 .card-content {
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+#upper-story-card{
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.453);
 }
 #upper-story-card img {
   border-radius: 50%;
@@ -254,12 +303,12 @@ td a:hover {
 }
 #lower-story-card {
   font-size: small;
+  color: rgba(0, 0, 0, 0.491);
   /* margin-left: 1em; */
 }
 #greenbanner1 {
   /* border: 1px solid; */
-  background: linear-gradient(109.6deg, var(--green) 11.2%, #00857c 91.1%)
-    fixed;
+  background: linear-gradient(109.6deg, var(--green) 11.2%, #00857c 91.1%) fixed;
   display: flex;
   justify-content: space-evenly;
   transition: 0.3s ease;
