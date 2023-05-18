@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #payment_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+  
+  #mg_home {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  #cart_items {
+    flex: 1;
+  }
+  
+  .medicine {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .medicine h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .medicine p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .mrp {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .remove-btn {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .decrease-btn,
+  .increase-btn {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #cart_total {
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .summary {
+    margin-bottom: 20px;
+  }
+  
+  .p_class {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+  
+  #tbp,
+  #total_savings {
+    font-weight: bold;
+  }
+  
+  .delivery-location {
+    margin-top: 20px;
+  }
+  
+  #checkout-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #payment_footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  
+  #payment_footer p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  #payment_footer span {
+    color: blue;
+    text-decoration: underline;
+  }
