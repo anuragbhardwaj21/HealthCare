@@ -36,7 +36,7 @@ function display(e)
     let addbtn = document.createElement('button')
     addbtn.textContent = "ADD TO CART"
     addbtn.addEventListener("click",function(){
-      tocart(ele)
+      addtocart(ele)
     })
 
     div1.append(image,name,brand,mrp,addbtn)
@@ -54,11 +54,56 @@ function singlepro(i) {
   window.location.href = "singleProduct.html";
 }
 
-function sortbypric(){
-  console.log("lsdjfl")
-  
-}
 function sortbypric() {
-  console.log(document.getElementById("standard-select2").value) 
-     
+  let by = document.getElementById("standard-select2").value
+  let sortapi = `https://chiragajmeraapi.onrender.com/api/products?brand=${by}`
+  let datas  = document.getElementById("data_box")
+  
+  datas.textContent = ""
+  document.getElementById("loading").textContent = "Loading"
+  fetch_api(sortapi)
+}
+
+function sortname(){
+  let by = document.getElementById("standard-select3").value
+  let sortapi = `https://chiragajmeraapi.onrender.com/api/products?sort=${by}`
+  let datas  = document.getElementById("data_box")
+  
+  datas.textContent = ""
+  document.getElementById("loading").textContent = "Loading"
+  fetch_api(sortapi)
+}
+
+
+function sortprice(){
+  let by = document.getElementById("standard-select").value
+  let sortapi = `https://chiragajmeraapi.onrender.com/api/products?sort=${by}`
+  let datas  = document.getElementById("data_box")
+  
+  datas.textContent = ""
+  document.getElementById("loading").textContent = "Loading"
+  fetch_api(sortapi)
+}
+
+function sortbydis(){
+  let by = document.getElementById("standard-select4").value
+  let sortapi = `https://chiragajmeraapi.onrender.com/api/products?usesof=${by}`
+  let datas  = document.getElementById("data_box")
+  
+  datas.textContent = ""
+  document.getElementById("loading").textContent = "Loading"
+  fetch_api(sortapi)
+}
+
+
+var cart_arr = JSON.parse(localStorage.getItem("cart_item"))||[]
+
+function addtocart(e)
+{
+  
+  e.quantity = 1;
+    cart_arr.push(e)
+     localStorage.setItem("cart_item",JSON.stringify(cart_arr))
+     window.location.reload();
+    
 }

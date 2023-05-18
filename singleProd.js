@@ -68,17 +68,17 @@ let info = document.createElement("p")
 info.textContent = product[0].prodinfo
 
 let use = document.createElement("p")
-use.textContent = `USE OF${product[0].name}`
+use.textContent = `USE OF ${product[0].name}`
 use.setAttribute("class","heading2")
 let useof = document.createElement("p")
 useof.textContent = product[0].usesof
 
 let Benifits = document.createElement("p")
-Benifits.textContent = `BENEFITS OF${product[0].name}`
+Benifits.textContent = `BENEFITS OF ${product[0].name}`
 Benifits.setAttribute("class","heading2")
 let Benifit = document.createElement("p")
 Benifit.style.color = "red"
-Benifit.textContent = `In Treatment of${product[0].usesof}`
+Benifit.textContent = `In Treatment of ${product[0].usesof}`
 
 
 let Benifit2 = document.createElement('p')
@@ -101,8 +101,9 @@ for(let i=0;i<product[0].sideeffect.length;i++)
 let nameh = document.createElement('h2')
 nameh.textContent = product[0].name
 
-let mrps = document.createElement("h3")
-mrps.textContent = `₹${product[0].mrp}`
+var mrps = document.createElement("h3")
+let amt  = document.getElementById("number").value
+mrps.textContent = `₹${product[0].mrp*amt}`
 
 let tc = document.createElement("p")
 tc.textContent = "*Inclusive of all taxes"
@@ -123,7 +124,8 @@ function increaseValue() {
     value = isNaN(value) ? 0 : value;
     value++;
     document.getElementById('number').value = value;
-    
+    let amt  = document.getElementById("number").value
+    mrps.textContent = `₹${product[0].mrp*amt}`
   }
   
   function decreaseValue() {
@@ -132,6 +134,8 @@ function increaseValue() {
     value < 1 ? value = 1 : '';
     value--;
     document.getElementById('number').value = value;
+    let amt  = document.getElementById("number").value
+    mrps.textContent = `₹${product[0].mrp*amt}`
   }
 
 
@@ -143,8 +147,8 @@ function increaseValue() {
 addto.addEventListener("click",addtocart)
 function addtocart()
 {
-  let lastp = cart_arr.length;
-  cart_arr[lastp] =  document.getElementById('number').value;
+  let amt  = document.getElementById('number').value;
+  product[0].quantity = amt;
     cart_arr.push(product[0])
      localStorage.setItem("cart_item",JSON.stringify(cart_arr))
      window.location.reload();

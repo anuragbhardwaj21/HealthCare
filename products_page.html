@@ -31,12 +31,13 @@ font-family: 'Work Sans', sans-serif;
         #left {
             position: sticky;
             top: 0px;
-            width: 25%;
+            width: 20%;
             height: 55vh;
             margin-top: 12px;
             margin-left: auto;
             border-radius: 7px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: rgb(218, 214, 214);
 
         }
 
@@ -113,6 +114,16 @@ font-family: 'Work Sans', sans-serif;
             cursor: pointer;
             line-height: 2;
         }
+        .select4 {
+            width: 80%;
+            min-width: 15ch;
+            max-width: 30ch;
+            margin-right: auto;
+            padding: 0.25em 0.5em;
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 2;
+        }
         #content{
             padding: 20px 0px 0px 10px;
             
@@ -157,9 +168,9 @@ font-family: 'Work Sans', sans-serif;
             background-color: #eeab53;
         }
         #loading{
-            margin-top: 20%;
-            margin-left: 80%;
+           margin-left: 40%;
         }
+        
     </style>
 </head>
 <body>
@@ -172,47 +183,43 @@ font-family: 'Work Sans', sans-serif;
                 <div class="select2">
 
                     
-                    <!-- <select name="" id="price" onchange="sortbyprice()">
-                        <option value="all">Price by</option>
-                        <option value="high">high to low</option>
-                        <option value="low">low to high</option>
-                    </select> -->
+                    
                     <select name="" id="standard-select2" onchange="sortbypric()">
-                        <option value="Relevence">Sort By:Relevence</option>
-                        <option value="High to Low">Sort By:High to Low</option>
-                        <option value="Low to high">Sort By:Low to high</option>
+                        <option value="">Sort By:Company</option>
+                        <option value="Eisai Pharmaceuticals India Pvt Ltd">Eisai Pharmaceuticals India Pvt Ltd</option>
+                        <option value="Glaxo SmithKline Pharmaceuticals Ltd">Glaxo SmithKline Pharmaceuticals Ltd</option>
+                        <option value="Dr Reddy's Laboratories Ltd">Dr Reddy's Laboratories Ltd</option>
+                        <option value="Abbott">Abbott</option>
+                        <option value="Pfizer Ltd">Pfizer Ltd</option>
+                        <option value="Alkem Laboratories Ltd">Alkem Laboratories Ltd</option>
+                        <option value="Torrent Pharmaceuticals Ltd">Torrent Pharmaceuticals Ltd</option>
+                        <option value="Sanofi India Ltd">Sanofi India Ltd</option>
+                        <option value="Mankind Pharma Ltd">Mankind Pharma Ltd</option>
+                        <option value="RPG Life Sciences Ltd">RPG Life Sciences Ltd</option>
+                        <option value="Cipla Ltd">Cipla Ltd</option>
+                        <option value="Win-Medicare Pvt Ltd">Win-Medicare Pvt Ltd</option>
                     </select>
                 </div>
-                <hr id="ruler">
+                
                 <div class="select3">
-                    <select id="standard-select3">
-                        <option value="a">Filter By: Alphabate</option>
-                        <option value="a">A</option>
-                        <option value="b">B</option>
-                        <option value="c">C</option>
-                        <option value="d">D</option>
-                        <option value="e">E</option>
-                        <option value="f">F</option>
-                        <option value="f">G</option>
-                        <option value="h">H</option>
-                        <option value="i">I</option>
-                        <option value="j">J</option>
-                        <option value="k">K</option>
-                        <option value="l">L</option>
-                        <option value="m">M</option>
-                        <option value="n">N</option>
-                        <option value="o">O</option>
-                        <option value="p">P</option>
-                        <option value="q">Q</option>
-                        <option value="r">R</option>
-                        <option value="s">S</option>
-                        <option value="t">T</option>
-                        <option value="u">U</option>
-                        <option value="v">V</option>
-                        <option value="w">W</option>
-                        <option value="x">X</option>
-                        <option value="y">Y</option>
-                        <option value="z">Z</option>
+                    <select id="standard-select3" onchange="sortname()">
+                        <option value="">Sort By: Name</option>
+                        <option value="name">Ascending</option>
+                        <option value="-name">Descending</option>
+                        
+                    </select>
+                </div>
+                <div class="select4">
+                    <select id="standard-select4" onchange="sortname()">
+                        <option value="">Sort By: Disease</option>
+                        <option value="Alzheimer's disease">Alzheimer's disease</option>
+                        <option value="Treatment of Bacterial infections">Treatment of Bacterial infections</option>
+                        <option value="In Treatment of Treatment of Anxiety">In Treatment of Treatment of Anxiety</option>
+                        <option value="Treatment of Skin conditions with inflammation & itching">Treatment of Skin conditions with inflammation & itching</option>
+                        <option value="Treatment of Resistant Tuberculosis (TB)">Treatment of Resistant Tuberculosis (TB)</option>
+                        <option value="Treatment of Dry cough">Treatment of Dry cough</option>
+                        <option value="Treatment of Anal fissure">Treatment of Anal fissure</option>
+                        
                     </select>
                 </div>
             </div>
@@ -224,20 +231,21 @@ font-family: 'Work Sans', sans-serif;
             <div id="item_count"></div>
             <hr id="ruler">
             <div class="select">
-                <select id="standard-select">
-                    <option value="Relevence">Sort By:Relevence</option>
-                    <option value="High to Low">Sort By:High to Low</option>
-                    <option value="Low to high">Sort By:Low to high</option>
+                <select id="standard-select" onchange="sortprice()">
+                    <option value="">Sort By:Relevence</option>
+                    <option value="-mrp">Sort By:High to Low</option>
+                    <option value="mrp">Sort By:Low to high</option>
                 </select>
             </div>
+            <div id="loading">
+                <h1> Loading....</h1> 
+             </div>
             <div id="data_box">
-                <div id="loading">
-                   <h1> Loading....</h1> 
-                </div>
+                
             </div>
         </div>
     </div>
-   
+    <div id="footer"></div>
 
 
 </body>
