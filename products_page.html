@@ -11,17 +11,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Rajdhani:wght@300&family=Work+Sans:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
     <style>
-        /* body {
-            width: 70%;
-            margin: auto;
-            background-color: rgb(231, 241, 231);
-        }  */
+        
        
         *{
             font-family: 'Montserrat', sans-serif;
 font-family: 'Rajdhani', sans-serif;
 font-family: 'Work Sans', sans-serif;
         }
+       
          #container {
             display: flex;
             width: 100%;
@@ -32,8 +29,11 @@ font-family: 'Work Sans', sans-serif;
         }
 
         #left {
+            position: sticky;
+            top: 0px;
             width: 25%;
             height: 55vh;
+            margin-top: 12px;
             margin-left: auto;
             border-radius: 7px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -156,6 +156,10 @@ font-family: 'Work Sans', sans-serif;
         .box>button:hover{
             background-color: #eeab53;
         }
+        #loading{
+            margin-top: 20%;
+            margin-left: 80%;
+        }
     </style>
 </head>
 <body>
@@ -166,7 +170,14 @@ font-family: 'Work Sans', sans-serif;
                 <p>Filter By</p>
                 <hr id="ruler">
                 <div class="select2">
-                    <select id="standard-select2">
+
+                    
+                    <!-- <select name="" id="price" onchange="sortbyprice()">
+                        <option value="all">Price by</option>
+                        <option value="high">high to low</option>
+                        <option value="low">low to high</option>
+                    </select> -->
+                    <select name="" id="standard-select2" onchange="sortbypric()">
                         <option value="Relevence">Sort By:Relevence</option>
                         <option value="High to Low">Sort By:High to Low</option>
                         <option value="Low to high">Sort By:Low to high</option>
@@ -206,6 +217,8 @@ font-family: 'Work Sans', sans-serif;
                 </div>
             </div>
         </div>
+        
+        
         <div id="right">
             <p>Medicines - Total Items</p>
             <div id="item_count"></div>
@@ -218,7 +231,9 @@ font-family: 'Work Sans', sans-serif;
                 </select>
             </div>
             <div id="data_box">
-                
+                <div id="loading">
+                   <h1> Loading....</h1> 
+                </div>
             </div>
         </div>
     </div>
@@ -226,6 +241,7 @@ font-family: 'Work Sans', sans-serif;
 
 
 </body>
-<script type="module" src="product_page.js"></script>
+<script  src="product_page.js"></script>
+<script type="module" src="try.js"></script>
 
 </html>

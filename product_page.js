@@ -1,11 +1,12 @@
-import  {navbar,footer}  from "./components/components.js";
-document.getElementById('navbar').innerHTML = navbar()
+// import  {navbar,footer}  from "./components/components.js";
+// document.getElementById('navbar').innerHTML = navbar()
 
 var API = "https://chiragajmeraapi.onrender.com/api/products";
 const fetch_api = async (api)=>{
   try {
     let resp = await fetch(api);
     let res = await resp.json()
+    document.getElementById("loading").style.display = "none"
    console.log(res)
    display(res)
   } catch (error) {
@@ -30,7 +31,7 @@ function display(e)
     brand.textContent = ele.brand;
     
     let mrp = document.createElement('p')
-    mrp.textContent = ele.mrp;
+    mrp.textContent = `₹${ele.mrp}`;
 
     let addbtn = document.createElement('button')
     addbtn.textContent = "ADD TO CART"
@@ -51,4 +52,13 @@ function singlepro(i) {
   single_product.push(i);
   localStorage.setItem("single_prod", JSON.stringify(single_product));
   window.location.href = "singleProduct.html";
+}
+
+function sortbypric(){
+  console.log("lsdjfl")
+  
+}
+function sortbypric() {
+  console.log(document.getElementById("standard-select2").value) 
+     
 }

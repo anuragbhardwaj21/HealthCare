@@ -105,10 +105,10 @@ let mrps = document.createElement("h3")
 mrps.textContent = `₹${product[0].mrp}`
 
 let tc = document.createElement("p")
-tc.textContent = "Inclusive of all taxes"
+tc.textContent = "*Inclusive of all taxes"
 
 let tnc = document.createElement('p')
-tnc.textContent = "This offer price is valid on orders above ₹1999. Apply coupon HEALTHALL on the cart. Max. coupon discount is ₹300. T&C apply."
+tnc.textContent = "*This offer price is valid on orders above ₹1999. Apply coupon HEALTHALL on the cart. Max. coupon discount is ₹300. T&C apply."
 
 let word = document.createElement("p")
 word.setAttribute("id","word")
@@ -139,5 +139,15 @@ function increaseValue() {
   let addto = document.createElement('button')
   addto.textContent = 'ADD TO CART'
   //ADD TO CART FUNCTION HERE
+  var cart_arr = JSON.parse(localStorage.getItem("cart_item"))||[]
+addto.addEventListener("click",addtocart)
+function addtocart()
+{
+  let lastp = cart_arr.length;
+  cart_arr[lastp] =  document.getElementById('number').value;
+    cart_arr.push(product[0])
+     localStorage.setItem("cart_item",JSON.stringify(cart_arr))
+     window.location.reload();
+}
 document.getElementById("addtocart").append(addto)
 
