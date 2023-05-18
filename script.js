@@ -103,23 +103,21 @@ for (let i = 0; i < 12; i++) {
   })(i);
 }
 
-
 // -----------------------------------------------------------------------navbar search implimentation
 
-var baseApi="https://chiragajmeraapi.onrender.com/api/products?name="
 var searchInputNav = document.getElementById("searchInputNav");
 var searchNavButton = document.getElementById("searchNavButton");
-
-searchNavButton.addEventListener("click", function() {
+searchNavButton.addEventListener("click", function () {
   var dataToBeSearched = searchInputNav.value;
-  // var apiUrl = `baseApi${encodeURIComponent(dataToBeSearched)}`;
-
-  fetch(`https://chiragajmeraapi.onrender.com/api/products?name=${dataToBeSearched}`)
-    .then(response => response.json())
-    .then(data => {
+  searchInputNav.value = "";
+  fetch(
+    `https://chiragajmeraapi.onrender.com/api/products?name=${dataToBeSearched}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
       console.log(data);
     })
-    .catch(error => {
+    .catch((error) => {
       console.log("An error occurred:", error);
     });
 });
