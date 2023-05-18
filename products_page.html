@@ -1,12 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product_page</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Rajdhani:wght@300&family=Work+Sans:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
+    <style>
+        /* body {
+            width: 70%;
+            margin: auto;
+            background-color: rgb(231, 241, 231);
+        }  */
+       
+        *{
+            font-family: 'Montserrat', sans-serif;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Work Sans', sans-serif;
+        }
+         #container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            background-color: white;
+            margin-top: 20px;
+          
+        }
+
+        #left {
+            width: 25%;
+            height: 55vh;
+            margin-left: auto;
+            border-radius: 7px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        }
+
+        #right {
+            width: 65%;
+            height: auto;
+            
+            margin-left: auto;
+        }
+
+        #ruler {
+            border: 1px solid rgb(186, 219, 240);
+        }
+
+        #right>p {
+            color: rgb(53, 167, 244);
+        }
+
+        select {
+
+            appearance: none;
+            border-radius: 10px;
+            background-color: transparent;
+            border: none;
+            padding: 0 1em 0 0;
+            margin: 0;
+            width: 100%;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: inherit;
+            line-height: inherit;
+            outline: none;
+            border: 1px solid rgb(222, 213, 213);
+            padding-left: 15px;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .select {
+            width: 30%;
+            min-width: 15ch;
+            max-width: 30ch;
+            margin-left: auto;
+            padding: 0.25em 0.5em;
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 1.8;
+
+
+        }
+
+        .select2 {
+            width: 80%;
+            min-width: 15ch;
+            max-width: 30ch;
+            margin-right: auto;
+            padding: 0.25em 0.5em;
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 2;
+
+
+        }
+
+        .select3 {
+            width: 80%;
+            min-width: 15ch;
+            max-width: 30ch;
+            margin-right: auto;
+            padding: 0.25em 0.5em;
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 2;
+        }
+        #content{
+            padding: 20px 0px 0px 10px;
+            
+        }
+        #data_box{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);   
+            row-gap: 20px;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+           
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin: auto;
+            border-radius: 10px;
+            width: 75%;
+            height: auto;
+            text-align: center;
+            cursor: pointer;
+        }
+        .box>*{
+           margin: auto;
+           margin-bottom: 10px;
+        }
+        .box>img{
+            width: 100px;
+            height: 100px;
+        }
+        .box>button{
+            width: 100%;
+            padding: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: none;
+            background-color: #FC9916;
+            margin-bottom: 0px;
+            
+        }
+        .box>button:hover{
+            background-color: #eeab53;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="navbar"></div>
+    <div id="container">
+        <div id="left">
+            <div id="content">
+                <p>Filter By</p>
+                <hr id="ruler">
+                <div class="select2">
+                    <select id="standard-select2">
+                        <option value="Relevence">Sort By:Relevence</option>
+                        <option value="High to Low">Sort By:High to Low</option>
+                        <option value="Low to high">Sort By:Low to high</option>
+                    </select>
+                </div>
+                <hr id="ruler">
+                <div class="select3">
+                    <select id="standard-select3">
+                        <option value="a">Filter By: Alphabate</option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        <option value="d">D</option>
+                        <option value="e">E</option>
+                        <option value="f">F</option>
+                        <option value="f">G</option>
+                        <option value="h">H</option>
+                        <option value="i">I</option>
+                        <option value="j">J</option>
+                        <option value="k">K</option>
+                        <option value="l">L</option>
+                        <option value="m">M</option>
+                        <option value="n">N</option>
+                        <option value="o">O</option>
+                        <option value="p">P</option>
+                        <option value="q">Q</option>
+                        <option value="r">R</option>
+                        <option value="s">S</option>
+                        <option value="t">T</option>
+                        <option value="u">U</option>
+                        <option value="v">V</option>
+                        <option value="w">W</option>
+                        <option value="x">X</option>
+                        <option value="y">Y</option>
+                        <option value="z">Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <p>Medicines - Total Items</p>
+            <div id="item_count"></div>
+            <hr id="ruler">
+            <div class="select">
+                <select id="standard-select">
+                    <option value="Relevence">Sort By:Relevence</option>
+                    <option value="High to Low">Sort By:High to Low</option>
+                    <option value="Low to high">Sort By:Low to high</option>
+                </select>
+            </div>
+            <div id="data_box">
+                
+            </div>
+        </div>
+    </div>
+   
+
+
 </body>
+<script type="module" src="product_page.js"></script>
+
 </html>
