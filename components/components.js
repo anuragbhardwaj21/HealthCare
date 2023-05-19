@@ -14,7 +14,7 @@ function navbar() {
         <a href="../HealthCare/index.html">🏠</a>
         <a href="">🛒</a>
         <a href="../HealthCare/consultnow.html">Consult Now</a>
-        <a href="../HealthCare/consultnow.html">Login/Signup</a>
+        <a href="login.html">Login/Signup</a>
     </div>
     `;
 }

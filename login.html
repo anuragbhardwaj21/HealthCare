@@ -14,90 +14,78 @@
 <body>
     <div id="navbar"></div>
     <div class="nnn">
-   
-    <div id="main">
-          <!-- 1st box -->
-    <div class="container">
-       
-        <div class="container_login">
-            <div class="login_box">
-               
-              
-            <h2>Existing Customers</h2>
-                  <form>
-                   
-                    <label>*Email Address</label>
-                    <div class="c1">
-                    <input id="email" type="text" placeholder="Email Address" required>
-                     
+        <div id="main">
+            <!-- 1st box -->
+            <div class="container">
+                <div class="container_login">
+                    <div class="login_box">
+                        <h2>Existing Customers</h2>
+                        <form>
+                            <label>*Email Address</label>
+                            <div class="c1">
+                                <input id="email" type="text" placeholder="Email Address" required>
+                            </div>
+                            <label>*Password</label>
+                            <div>
+                                <input id="password" type="password" placeholder="&#128065; Password" required>
+                                <span class="password-icon" onclick="togglePasswordVisibility()">Show</span>
+                            </div>
+                            <p id="error-message" style="color: red;"></p>
+                            <input type="submit" value="SIGN IN" name="contine" id="button">
+                            <p>Don't have an account?<a href="registration.html">Register here</a></p>
+                        </form>
+                      
+                    </div>
                 </div>
-                    <label>*Password</label>
-                    <div>
-                    <input id="password" type="password" placeholder="Password" required>
-                   
-                </div>
-                 
-                    <input type="submit" value="SIGN IN" name="contine" id="button">
-                   
-                  </form>
-              </div>
             </div>
-           
+            <!-- 1st box -->
         </div>
-         <!-- 1st box -->
-        <div class="container2">
-            <h2>New Customers</h2>
-           
-           <a href="registration.html" style="text-decoration: none;">
-              <input type="submit" value="REGISTER"  id="button1" > 
-            </a>
-        </div>
-        
     </div>
-       
-    </div>
-</div>
 
+    <div id="footer"></div>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="./components/components.js"></script>
+    <script>
+        document.querySelector("form").addEventListener("submit", login);
 
- <!-- navbar-->
- 
-  <div id="cardsection"></div>
-  <div id="storiessection">
-   
-</div>
-</div>
+        function login(event) {
+            event.preventDefault();
+            var email = document.querySelector("#email").value;
+            var password = document.querySelector("#password").value;
+            var errorMessage = document.querySelector("#error-message"); // Get the error message element
+            var loginArr = JSON.parse(localStorage.getItem("userInfo")) || []; // Retrieve login data from local storage
 
-<div id="footer"></div>
-</body>
-<script type="module" src="script.js"></script>
-<script type="module" src="./components/components.js"></script>
-<script>
-    document.querySelector("form").addEventListener("submit", login);
-    var loginArr = JSON.parse(localStorage.getItem("userInfo")) || [];
-
-    function login(event) {
-      event.preventDefault();
-      var email = document.querySelector("#email").value;
-      var password = document.querySelector("#password").value;
-       
-      if (loginArr.length > 0) {
-        var loggedIn = false;
-        for (var i = 0; i < loginArr.length; i++) {
-          if (loginArr[i].email === email && loginArr[i].password === password) {
-            loggedIn = true;
-            break;
-          }
+            if (loginArr.length > 0) {
+                var loggedIn = false;
+                for (var i = 0; i < loginArr.length; i++) {
+                    if (loginArr[i].email === email && loginArr[i].password === password) {
+                        loggedIn = true;
+                        break;
+                    }
+                }
+                if (loggedIn) {
+                    alert("Login Successfully Done");
+                    window.location.href = "index.html";
+                } else {
+                    errorMessage.textContent = "Incorrect email or password "; // Set the error message
+                }
+            } else {
+                errorMessage.textContent = "Incorrect email or password or You have not registered yet"; // Set the error message
+            }
         }
-        if (loggedIn) {
-          alert("Login Successfully Done");
-          window.location.href = "/index.html"
-} else {
-alert("Incorrect email or password or You Have Not Registered Yet");
-}
-} else {
-alert("Incorrect email or password or You Have Not Registered Yet");
-}
-}
-</script>
 
+        function togglePasswordVisibility() {
+            var passwordInput = document.querySelector("#password");
+            var toggleIcon = document.querySelector(".password-icon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.textContent = "Hide";
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.textContent = "Show";
+            }
+        }
+    </script>
+</body>
 </html>
