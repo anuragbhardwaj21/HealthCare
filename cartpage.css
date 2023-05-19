@@ -1,133 +1,203 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  #payment_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f1f1f1;
-  }
-  
-  #mg_home {
-    width: 50px;
-    height: 50px;
-  }
-  
-  #container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  #cart_items {
-    flex: 1;
-  }
-  
-  .medicine {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .medicine h3 {
-    margin: 0;
-    font-size: 16px;
-  }
-  
-  .medicine p {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-  
-  .price {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .mrp {
-    color: #888;
-    font-size: 14px;
-  }
-  
-  .remove-btn {
-    padding: 5px 10px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .quantity {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .decrease-btn,
-  .increase-btn {
-    padding: 5px 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #cart_total {
-    width: 300px;
-    background-color: #f9f9f9;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .summary {
-    margin-bottom: 20px;
-  }
-  
-  .p_class {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-  
-  hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 10px 0;
-  }
-  
-  #tbp,
-  #total_savings {
-    font-weight: bold;
-  }
-  
-  .delivery-location {
-    margin-top: 20px;
-  }
-  
-  #checkout-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #payment_footer {
-    background-color: #f1f1f1;
-    padding: 20px;
-  }
-  
-  #payment_footer p {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-  
-  #payment_footer span {
-    color: blue;
-    text-decoration: underline;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.box {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.picture {
+  width: 80px; /* Adjust the width as needed */
+  margin-right: 10px;
+  margin:auto; /* Add some space between the image and text */
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.quant {
+  margin-top: 5px; /* Add some space between the image and quantity */
+}
+
+.mrp {
+  text-decoration: line-through; /* Add a line-through to the MRP */
+  color: #999; /* Adjust color as desired */
+}
+
+.tprice {
+  margin-top: 10px; /* Add some space below the MRP */
+}
+
+#payment_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+#mg_home {
+  width: 50px;
+  height: 50px;
+}
+
+#container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  padding: 20px;
+}
+
+#cart_items {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 20px; /* Adjust the max-width value to make the medicine box smaller */
+  flex-direction: column;
+}
+
+.medicine {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column; /* Display elements vertically */
+  align-items: flex-start; /* Align elements to the left */
+  font-family: Arial, sans-serif; /* Change the font family */
+  font-size: medium; 
+}
+
+.medicine h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.medicine p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #777;
+  font-family: Arial, sans-serif;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.mrp {
+  color: #888;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.remove-btn {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.decrease-btn,
+.increase-btn {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cart_total {
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+}
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.p_class {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+#tbp,
+#total_savings {
+  font-weight: bold;
+  color: #333;
+}
+
+.delivery-location {
+  margin-top: 20px;
+}
+
+#checkout-btn {
+  padding: 10px 20px;
+  background-color: #115d58;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#payment_footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+#payment_footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+#payment_footer span {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+
+
+
+

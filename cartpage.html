@@ -7,31 +7,24 @@
   <title>Cart</title>
   <link rel="stylesheet" href="cartpage.css">
   <link rel="icon" href="https://www.1mg.com/images/tata_1mg_logo.svg">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div id="payment_header">
-    <div>
-      <img id="mg_home" src="https://www.shutterstock.com/image-vector/simple-health-care-cross-logo-260nw-1853151916.jpg" alt="Logo">
-      <img src="" alt="Search Bar">
-    </div>
-    <div id="need_help">Need Help?</div>
-  </div>
+  <div id="navbar"></div>
 
   <div id="container">
     <div id="cart_items">
-      <div class="medicine">
-        <h3>Depura 60000 IU Vitamin D3 Oral Solution, Helps Keep Bones Healthy, Aids in Boosting Immunity Sugar Free</h3>
-        <p>bottle of 5 ml Oral Solution</p>
+      <div id="medicine">
+        <!-- <h3>name here</h3>
+        <p>total quantity</p>
         <p class="price"></p>
         <p class="mrp">MRP</p>
-        <button class="remove-btn">Remove</button>
-        <div class="quantity">
-          <button class="decrease-btn">-</button>
-          <span>1</span>
-          <button class="increase-btn">+</button>
-        </div>
+        <p class="total_price">total price</p>
+        <button class="remove-btn">Remove</button> -->     
       </div>
     </div>
+
+
     <div id="cart_total">
       <div class="summary">
         <p class="p_class">
@@ -45,7 +38,7 @@
         <hr>
         <p class="p_class">
           <span>Estimated Shipping Fee</span>
-          <span class="shipping-fee"></span>
+          <span id="shipping-fee"></span>
         </p>
         <hr>
         <p class="p_class" id="tbp">
@@ -64,6 +57,8 @@
       </div>
     </div>
   </div>
+  <div id="footer"></div>
   </body>
 </html>
 <script src="cartpage.js"></script>
+<script type="module" src="linknav.js"></script>

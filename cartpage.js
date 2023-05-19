@@ -1,73 +1,90 @@
-import { navbar, footer } from "./components/components.js";
-
-var navbarArea = document.getElementById("navbar");
-navbarArea.innerHTML = navbar();
-
-var footerArea = document.getElementById("footer");
-footerArea.innerHTML = footer();
-
-// Check if there are any products in the cart
-var cartItems = JSON.parse(localStorage.getItem("cart_item")) || [];
-
-// Function to display the cart items
-function displayCart() {
-  // Get the container elements
-  var container = document.getElementById("container");
-  var cartItemsContainer = document.getElementById("cart_items");
-  var cartTotalContainer = document.getElementById("cart_total");
-
-  // If no items in the cart, display the message
-  if (cartItems.length === 0) {
-    var messageDiv = document.createElement("div");
-    messageDiv.innerHTML = "<h2>Oops!</h2><p>Looks like there is no item in your cart yet.</p><button id='add_medicines'>ADD MEDICINES</button>";
-    container.appendChild(messageDiv);
-
-    // Redirect to the home page when the "ADD MEDICINES" button is clicked
-    var addMedicinesButton = document.getElementById("add_medicines");
-    addMedicinesButton.addEventListener("click", function () {
-      window.location.href = "index.html";
-    });
-  } else {
-    // Display the cart items
-    cartItemsContainer.innerHTML = "";
-    cartItems.forEach(function (item) {
-      var cartItemDiv = document.createElement("div");
-      // Create and append the necessary HTML elements to display each item
-      // ...
-
-      cartItemsContainer.appendChild(cartItemDiv);
-    });
-
-    // Calculate and display the cart summary
-    var totalPrice = 0;
-    var totalDiscount = 0;
-
-    cartItems.forEach(function (item) {
-      // Update totalPrice and totalDiscount based on item price and quantity
-      // ...
-
-      // Create and append the necessary HTML elements for displaying the summary
-      // ...
-    });
-
-    // Create and append the necessary HTML elements for the checkout section
-    // ...
-  }
+var getarr = JSON.parse(localStorage.getItem("cart_item")) || [];
+if(getarr.length==0)
+{
+  window.location.href = "emptycart.html"
 }
 
-// Call the displayCart function
-displayCart();
+display()
+function display() {
+  getarr.map(function (ele, b) {
+    console.log(ele.quantity)
+    let name = document.createElement("h3");
+    name.setAttribute("class", "name");
+    name.textContent = ele.name;
 
-// Checkout button click event handler
-var checkoutButton = document.getElementById("checkout_button");
-checkoutButton.addEventListener("click", function () {
-  var userLoggedIn = JSON.parse(localStorage.getItem("user_login"));
+    let image = document.createElement('img')
+    image.setAttribute('src',ele.img)
+    image.setAttribute('class','picture')
 
-  if (userLoggedIn) {
-    // Redirect to the payment page if the user is logged in
-    window.location.href = "payment.html";
-  } else {
-    // Redirect to the login page if the user is not logged in
-    window.location.href = "login.html";
+
+
+     var tquantity = document.createElement("p");
+     tquantity.setAttribute("class", "quant");
+     tquantity.textContent = ele.quantity;
+    
+    var price = document.createElement("p");
+    price.setAttribute("class", "price");
+    price.textContent = "₹" + ele.mrp;
+
+    var tprice = document.createElement("p");
+    tprice.setAttribute("class", "tprice");
+    tprice.textContent = "₹" + (ele.mrp)*(ele.quantity);
+
+    let btn = document.createElement("button")
+    btn.textContent = "Remove"
+    btn.setAttribute("class","deleted")
+    btn.style.backgroundColor = "Red"
+    btn.style.border = "none"
+    btn.addEventListener("click",function(){
+      delete_item(ele)
+    })
+
+    let div1 = document.createElement('div')
+    div1.setAttribute("class","box")
+    div1.append(name,price,tquantity,tprice,btn, image)
+
+    document.getElementById("medicine").append(div1)
+  });
+}
+function  delete_item(i)
+{
+  var rem = getarr.splice(i,1)
+  localStorage.setItem("cart_item",JSON.stringify(getarr))
+   location.reload()
+}
+setdata()
+function setdata()
+{
+  let getar = JSON.parse(localStorage.getItem("cart_item")) || [];
+  var totalmrp = 0;
+  getar.map(function (ele, b) {
+   totalmrp += (ele.mrp)*(ele.quantity);
+  });
+  document.getElementById("itm_total").textContent = totalmrp
+  document.getElementById("ttl_dsc1").textContent = 15;
+  if(totalmrp>200)
+  {
+    document.getElementById("shipping-fee").textContent = 0;
   }
-});
+  else{
+    document.getElementById("shipping-fee").textContent = 50;
+  }
+  let topaid = totalmrp-15;
+  document.getElementById("ttl").textContent = topaid
+  document.getElementById("ttl_dsc").textContent = 15
+
+}
+
+
+document.getElementById("checkout-btn").addEventListener("click",function(){
+  checkout()
+})
+function checkout(){
+  let getar = JSON.parse(localStorage.getItem("cart_item")) || [];
+  var totalmrp = 0;
+  getar.map(function (ele, b) {
+   totalmrp += (ele.mrp)*(ele.quantity);
+  });
+  localStorage.setItem("bill_amout",totalmrp-15)
+  window.location.href = "paymentpage.html"
+}
