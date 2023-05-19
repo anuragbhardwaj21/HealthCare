@@ -1,14 +1,18 @@
 function navbar() {
   return `
     <div id="leftNavItems">
-        <a href=""> Medicines</a>
+        <a href="../HealthCare/productpage.html"> Medicines </a>
         <a href=""> Doctor</a>
-        <a href=""> Pharmacy</a>
+        <a href="../HealthCare/productpage.html"> Pharmacy</a>
         <a href=""> Other Services</a>
+    </div>
+    <div id="searchNav">
+        <input type="text" id="searchInputNav" placeholder="Search Medicines">
+        <button id="searchNavButton">🔍</button>
     </div>
     <div id="rightNavItems">
         <a href="../HealthCare/index.html">🏠</a>
-        <a href="">Consult Now</a>
+        <a href="../HealthCare/consultnow.html">Consult Now</a>
     </div>
     `;
 }
@@ -214,4 +218,32 @@ function greenCard(i) {
   <span>${greenData1[i].caption}</span>
   `;
 }
-export { navbar, footer, commentData, data, reviewCard, greenCard };
+
+function contactFormRender(){
+  return `
+  <p>Meet with our Experts online</p>
+  <div id="contact-form-first-div">
+    <select id="chooseDepartment">
+      <option value="">Choose Department</option>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+    </select>
+    <select id="ChooseSpecialist">
+      <option value="">Choose Specialist</option>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+    </select>
+  </div>
+  <div id="contact-form-second-div">
+    <input type="" id="yourName" placeholder="Your Name">
+    <input type="" id="yourEmail" placeholder="Email Address">
+  </div>
+  <div id="contact-form-third-div">
+    <input type="" id="yourPhone" placeholder="Your Phone">
+    <input type="date" placeholder="Select Date">
+    <input type="time" placeholder="Select Time">
+  </div>
+  <button id="contact-form-submitButton">Submit</button>
+  `
+}
+export { navbar, footer, commentData, data, reviewCard, greenCard, contactFormRender };
