@@ -5,6 +5,7 @@ import {
   data,
   reviewCard,
   greenCard,
+  contactFormRender
 } from "./components/components.js";
 
 // -----------------------------------------------------------------------------navbar,footer ↓
@@ -120,4 +121,65 @@ searchNavButton.addEventListener("click", function () {
     .catch((error) => {
       console.log("An error occurred:", error);
     });
+});
+
+// ------------------------------------------------------------------------contact us form
+
+const contactForm = document.getElementById("contact-form");
+contactForm.innerHTML=contactFormRender();
+const submitButton = document.getElementById("contact-form-submitButton");
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const chooseDepartment = document.getElementById("chooseDepartment").value;
+  const chooseSpecialist = document.getElementById("ChooseSpecialist").value;
+  const nameInput = document.getElementById("yourName");
+  const emailInput = document.getElementById("yourEmail");
+  const phoneInput = document
+    .getElementById("contact-form-third-div")
+    .querySelector('input[placeholder="Your Phone"]');
+  const dateInput = document
+    .getElementById("contact-form-third-div")
+    .querySelector('input[placeholder="Select Date"]');
+  const timeInput = document
+    .getElementById("contact-form-third-div")
+    .querySelector('input[placeholder="Select Time"]');
+
+  if (
+    !chooseDepartment ||
+    !chooseSpecialist ||
+    !nameInput.value ||
+    !emailInput.value ||
+    !phoneInput.value ||
+    !dateInput.value ||
+    !timeInput.value
+  ) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  const formData = {
+    chooseDepartment,
+    chooseSpecialist,
+    name: nameInput.value,
+    email: emailInput.value,
+    phone: phoneInput.value,
+    date: dateInput.value,
+    time: timeInput.value,
+  };
+
+  const getName = (myString) => {
+    const splitString = myString.split(" ");
+    return splitString[0];
+  };
+  let storedData =
+    JSON.parse(localStorage.getItem("contactUsFormDetails")) || [];
+
+  storedData.push(formData);
+
+  localStorage.setItem("contactUsFormDetails", JSON.stringify(storedData));
+  alert("Form submitted successfully!");
+  contactForm.innerHTML = `
+  <p>Thanks for contacting us ${getName(nameInput.value)}.. Our team will reach you soon</p>
+  `;
 });
