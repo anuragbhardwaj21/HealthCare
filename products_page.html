@@ -8,26 +8,26 @@
     <title>product_page</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Rajdhani:wght@300&family=Work+Sans:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Rajdhani:wght@300&family=Work+Sans:ital,wght@0,500;1,300&display=swap"
+        rel="stylesheet">
     <style>
-        
-       
-        *{
+        * {
             font-family: 'Montserrat', sans-serif;
-font-family: 'Rajdhani', sans-serif;
-font-family: 'Work Sans', sans-serif;
+            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Work Sans', sans-serif;
         }
-       
-         #container {
+
+        #container {
             display: flex;
             width: 100%;
             justify-content: center;
             background-color: white;
             margin-top: 20px;
-          
+
         }
-        
+
 
         #left {
             position: sticky;
@@ -45,7 +45,7 @@ font-family: 'Work Sans', sans-serif;
         #right {
             width: 65%;
             height: auto;
-            
+
             margin-left: auto;
         }
 
@@ -115,6 +115,7 @@ font-family: 'Work Sans', sans-serif;
             cursor: pointer;
             line-height: 2;
         }
+
         .select4 {
             width: 80%;
             min-width: 15ch;
@@ -125,19 +126,22 @@ font-family: 'Work Sans', sans-serif;
             cursor: pointer;
             line-height: 2;
         }
-        #content{
+
+        #content {
             padding: 20px 0px 0px 10px;
-            
+
         }
-        #data_box{
+
+        #data_box {
             display: grid;
-            grid-template-columns: repeat(3,1fr);   
+            grid-template-columns: repeat(3, 1fr);
             row-gap: 20px;
         }
-        .box{
+
+        .box {
             display: flex;
             flex-direction: column;
-           
+
             align-items: center;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             margin: auto;
@@ -147,63 +151,118 @@ font-family: 'Work Sans', sans-serif;
             text-align: center;
             cursor: pointer;
         }
-        
-        .wishdiv>.wish{
+        .wishdiv{
+            height: 50px;
+        }
+        .wishdiv>.wish {
             margin-left: 190px;
-           
+
         }
-        .box>*{
-           margin: auto;
-           margin-bottom: 10px;
+
+        .box>* {
+            margin: auto;
+            margin-bottom: 10px;
         }
-        .box>img{
+
+        .box>img {
             width: 100px;
             height: 100px;
         }
+
         select {
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-}
-        .box>button{
-            /* width: 100%;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+        }
+
+        .box>button {
+            /* 
             padding: 10px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             border: none;
             background-color: #FC9916;
             margin-bottom: 0px; */
+            width: 90%;
             border: 0.5px solid var(--green);
-    background-color: var(--green);
-    color: rgba(255, 255, 255, 0.808);
-    padding: 5px 1em;
-    font-size: medium;
-            
+            background-color: var(--green);
+            color: rgba(255, 255, 255, 0.808);
+            padding: 5px 1em;
+            font-size: medium;
+
         }
-        .box>button:hover{
+
+        .box>button:hover {
             background-color: #eeab53;
         }
-        #loading{
-           margin-left: 40%;
+
+        #loading {
+            margin-left: 40%;
         }
+
         @media screen and (max-width: 768px) and (min-width: 500px) {
-  #left{
-    display: none;
-  }
-}
-@media screen and (max-width: 500px) and (min-width: 320px) {
-    #left{
-    display: none;
-  }
-  #data_box{
-            display: grid;
-            grid-template-columns: repeat(2,1fr);   
-            row-gap: 10px;
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #left {
+                display: none;
+            }
+            #navbar{
+                display: none;
+            }
+            .wishdiv>.wish{
+                display: none;
+            }
+            .box{
+                height: 50vh;
+                width: 215px;
+              
+            }
+            #container{
+                width: 12%;
+            }
+            #data_box{
+                margin-right: 0px;
+                display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            }
         }
-        
-}
+
+        @media screen and (max-width: 500px) and (min-width: 320px) {
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #left {
+                display: none;
+            }
+            #navbar{
+                display: none;
+            }
+            .wishdiv>.wish{
+                display: none;
+            }
+            .box{
+                height: 50vh;
+                width: 223px;
+              
+            }
+            #container{
+                width: 15%;
+            }
+            #data_box{
+                margin: auto;
+                display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            }
+
+        } 
     </style>
 </head>
+
 <body>
     <div id="navbar"></div>
     <div id="container">
@@ -213,12 +272,13 @@ font-family: 'Work Sans', sans-serif;
                 <hr id="ruler">
                 <div class="select2">
 
-                    
-                    
+
+
                     <select name="" id="standard-select2" onchange="sortbypric()">
                         <option value="">Sort By:Company</option>
                         <option value="Eisai Pharmaceuticals India Pvt Ltd">Eisai Pharmaceuticals India Pvt Ltd</option>
-                        <option value="Glaxo SmithKline Pharmaceuticals Ltd">Glaxo SmithKline Pharmaceuticals Ltd</option>
+                        <option value="Glaxo SmithKline Pharmaceuticals Ltd">Glaxo SmithKline Pharmaceuticals Ltd
+                        </option>
                         <option value="Dr Reddy's Laboratories Ltd">Dr Reddy's Laboratories Ltd</option>
                         <option value="Abbott">Abbott</option>
                         <option value="Pfizer Ltd">Pfizer Ltd</option>
@@ -231,13 +291,13 @@ font-family: 'Work Sans', sans-serif;
                         <option value="Win-Medicare Pvt Ltd">Win-Medicare Pvt Ltd</option>
                     </select>
                 </div>
-                
+
                 <div class="select3">
                     <select id="standard-select3" onchange="sortname()">
                         <option value="">Sort By: Name</option>
                         <option value="name">Ascending</option>
                         <option value="-name">Descending</option>
-                        
+
                     </select>
                 </div>
                 <div class="select4">
@@ -245,18 +305,21 @@ font-family: 'Work Sans', sans-serif;
                         <option value="">Sort By: Disease</option>
                         <option value="Alzheimer's disease">Alzheimer's disease</option>
                         <option value="Treatment of Bacterial infections">Treatment of Bacterial infections</option>
-                        <option value="In Treatment of Treatment of Anxiety">In Treatment of Treatment of Anxiety</option>
-                        <option value="Treatment of Skin conditions with inflammation & itching">Treatment of Skin conditions with inflammation & itching</option>
-                        <option value="Treatment of Resistant Tuberculosis (TB)">Treatment of Resistant Tuberculosis (TB)</option>
+                        <option value="In Treatment of Treatment of Anxiety">In Treatment of Treatment of Anxiety
+                        </option>
+                        <option value="Treatment of Skin conditions with inflammation & itching">Treatment of Skin
+                            conditions with inflammation & itching</option>
+                        <option value="Treatment of Resistant Tuberculosis (TB)">Treatment of Resistant Tuberculosis
+                            (TB)</option>
                         <option value="Treatment of Dry cough">Treatment of Dry cough</option>
                         <option value="Treatment of Anal fissure">Treatment of Anal fissure</option>
-                        
+
                     </select>
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div id="right">
             <p>Medicines - Total Items</p>
             <div id="item_count"></div>
@@ -269,10 +332,10 @@ font-family: 'Work Sans', sans-serif;
                 </select>
             </div>
             <div id="loading">
-                <h1> Loading....</h1> 
-             </div>
+                <h1> Loading....</h1>
+            </div>
             <div id="data_box">
-                
+
             </div>
         </div>
     </div>
@@ -280,7 +343,7 @@ font-family: 'Work Sans', sans-serif;
 
 
 </body>
-<script  src="product_page.js"></script>
+<script src="product_page.js"></script>
 <script type="module" src="try.js"></script>
 
 </html>
