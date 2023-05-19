@@ -6,18 +6,38 @@ let list = document.getElementById("list")
 let li1 = document.createElement("li")
 li1.setAttribute("class","li")
 li1.textContent = "Overview";
+li1.addEventListener('click',function(){
+ 
+  window.scrollBy(0, 100);
+
+})
 
 let li2 = document.createElement("li")
 li2.setAttribute("class","li")
 li2.textContent = "Uses";
+li2.addEventListener('click',function(){
+ 
+    window.scrollBy(0, 300);
+  
+})
 
 let li3 = document.createElement("li")
 li3.setAttribute("class","li")
 li3.textContent = "Benifits";
+li3.addEventListener('click',function(){
+ 
+  window.scrollBy(0, 450);
+
+})
 
 let li4 = document.createElement("li")
 li4.setAttribute("class","li")
 li4.textContent = "Side effects";
+li4.addEventListener('click',function(){
+ 
+  window.scrollBy(0, 500);
+
+})
 
 list.append(li1,li2,li3,li4)
 
