@@ -6,6 +6,9 @@ productPageNavbar.innerHTML = navbar();
 var productPageFooter = document.getElementById("footer");
 productPageFooter.innerHTML = footer();
 
+
+// ------------------------------------------------------->
+
 // Fetch data from a source
 fetch("https://chiragapi.onrender.com/arr")
   .then((response) => response.json()) // Assuming the response is in JSON format
@@ -20,6 +23,10 @@ fetch("https://chiragapi.onrender.com/arr")
 
 // Retrieve data from local storage
 const storedData = localStorage.getItem("myData");
+
+// ------------------------------------------------------->
+
+
 
 const parsedData = JSON.parse(storedData);
 console.log(parsedData);
