@@ -92,7 +92,6 @@ body {
 #rightNavItems a:nth-child(2) {
   border: 0.7px solid #279a87;
   padding: 10px 1em;
-  font-size: x-large;
   transition: 0.3s;
   color: var(--green);
 }
