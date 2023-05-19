@@ -27,6 +27,7 @@ font-family: 'Work Sans', sans-serif;
             margin-top: 20px;
           
         }
+        
 
         #left {
             position: sticky;
@@ -37,7 +38,7 @@ font-family: 'Work Sans', sans-serif;
             margin-left: auto;
             border-radius: 7px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            background-color: rgb(218, 214, 214);
+            background-color: rgba(0, 0, 0, 0.033);
 
         }
 
@@ -146,6 +147,11 @@ font-family: 'Work Sans', sans-serif;
             text-align: center;
             cursor: pointer;
         }
+        
+        .wishdiv>.wish{
+            margin-left: 190px;
+           
+        }
         .box>*{
            margin: auto;
            margin-bottom: 10px;
@@ -154,14 +160,24 @@ font-family: 'Work Sans', sans-serif;
             width: 100px;
             height: 100px;
         }
+        select {
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
         .box>button{
-            width: 100%;
+            /* width: 100%;
             padding: 10px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             border: none;
             background-color: #FC9916;
-            margin-bottom: 0px;
+            margin-bottom: 0px; */
+            border: 0.5px solid var(--green);
+    background-color: var(--green);
+    color: rgba(255, 255, 255, 0.808);
+    padding: 5px 1em;
+    font-size: medium;
             
         }
         .box>button:hover{
@@ -170,7 +186,22 @@ font-family: 'Work Sans', sans-serif;
         #loading{
            margin-left: 40%;
         }
+        @media screen and (max-width: 768px) and (min-width: 500px) {
+  #left{
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) and (min-width: 320px) {
+    #left{
+    display: none;
+  }
+  #data_box{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);   
+            row-gap: 10px;
+        }
         
+}
     </style>
 </head>
 <body>

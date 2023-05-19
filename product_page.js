@@ -21,6 +21,14 @@ function display(e)
   arr.forEach(ele => {
     let div1 = document.createElement('div')
     div1.setAttribute('class','box')
+
+    let wishdiv = document.createElement("div")
+    wishdiv.setAttribute("class","wishdiv")
+    let wish = document.createElement('h1')
+    wish.setAttribute('class',"wish")
+    wish.textContent = "♡"
+    wishdiv.append(wish)
+
     let image = document.createElement('img')
     image.setAttribute('src',ele.img)
 
@@ -39,7 +47,7 @@ function display(e)
       addtocart(ele)
     })
 
-    div1.append(image,name,brand,mrp,addbtn)
+    div1.append(wishdiv,image,name,brand,mrp,addbtn)
     document.getElementById("data_box").appendChild(div1)
 
     div1.addEventListener('click',function(){
