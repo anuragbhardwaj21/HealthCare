@@ -13,6 +13,7 @@ function navbar() {
     <div id="rightNavItems">
         <a href="../HealthCare/index.html">🏠</a>
         <a href="../HealthCare/consultnow.html">Consult Now</a>
+        <a href="../HealthCare/consultnow.html">Login/Signup</a>
     </div>
     `;
 }
