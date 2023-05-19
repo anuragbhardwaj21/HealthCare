@@ -60,6 +60,7 @@ body {
   background-color: rgba(0, 0, 0, 0.102);
   border: none;
   transition: 0.3s;
+  font-size: 1.3em;
 }
 #searchNavButton:hover {
   cursor: pointer;

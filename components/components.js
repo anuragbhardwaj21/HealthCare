@@ -1,18 +1,18 @@
 function navbar() {
   return `
     <div id="leftNavItems">
-        <a href=""> Medicines</a>
+        <a href="../HealthCare/productpage.html"> Medicines </a>
         <a href=""> Doctor</a>
-        <a href=""> Pharmacy</a>
+        <a href="../HealthCare/productpage.html"> Pharmacy</a>
         <a href=""> Other Services</a>
     </div>
     <div id="searchNav">
         <input type="text" id="searchInputNav" placeholder="Search Medicines">
-        <button id="searchNavButton"><img src="./images/search.png" alt=""></button>
+        <button id="searchNavButton">🔍</button>
     </div>
     <div id="rightNavItems">
         <a href="../HealthCare/index.html">🏠</a>
-        <a href="">Consult Now</a>
+        <a href="../HealthCare/consultnow.html">Consult Now</a>
     </div>
     `;
 }
