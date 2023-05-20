@@ -7,7 +7,7 @@ function navbar() {
         <a href=""> Other Services</a>
     </div>
     <div id="searchNav">
-        <input type="text" id="searchInputNav" placeholder="Search Medicines">
+        <input type="text" id="searchInputNav" oninput="debounce(search(),10000)" placeholder="Search Medicines">
         <button id="searchNavButton">🔍</button>
     </div>
     <div id="rightNavItems">

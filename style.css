@@ -1,3 +1,17 @@
+#suggestion{
+  padding: 10px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.sp{
+  margin: auto;
+  font-weight: 400;
+  color: #000000b3;
+  font-size: medium;
+  
+}
+
 :root {
   --green: #115d58;
   --orange: #fba637f6;

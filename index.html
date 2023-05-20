@@ -16,6 +16,7 @@
   <body>
     <div id="navbar"></div>
     <div id="body">
+      <div id="suggestion"></div>
       <div id="imagesection">
         <div id="divaboveimage">
           <p>The place where your health matters the most.</p>
@@ -73,5 +74,81 @@
   </body>
   <script type="module" src="script.js"></script>
   <script type="module" src="./components/components.js"></script>
+<<<<<<< HEAD
 </html>
 <link rel="stylesheet" href="../HealthCare/products_page.html">
+=======
+  <script>
+    let timeId;
+    var single_product = [];
+function singlepro(i) {
+  single_product.push(i);
+  localStorage.setItem("single_prod", JSON.stringify(single_product));
+  window.location.href = "singleProduct.html";
+}
+function perpro(e){
+  singlepro(e)
+}
+function display(a){
+  let sugbox = document.getElementById("suggestion")
+  let arr = a.mydata
+  for(let  i=0;i<5;i++){
+    let sp = document.createElement("span")
+    sp.setAttribute("class","sp")
+    sp.append(arr[i].name)
+    sp.addEventListener("click",function(){
+      perpro(arr[i])
+    })
+
+    sugbox.append(sp)
+  }
+ 
+
+  
+}
+const fetch_api = async (api)=>{
+  try {
+    let resp = await fetch(api);
+    let res = await resp.json()
+    display(res)
+   
+  } catch (error) {
+    console.log(error)
+  }
+}
+function func(){
+  let inputid = document.getElementById("searchInputNav").value
+  if(inputid=="")
+  {
+    window.location.reload()
+  }
+  let searchapi = `https://chiragajmeraapi.onrender.com/api/products?name=${inputid}`
+  fetch_api(searchapi)
+}
+function search(){
+  
+  let inputid1 = document.getElementById("searchInputNav").value
+  
+  if(inputid1=="")
+  {
+    window.location.reload()
+  }
+  
+  let searchapi1 = `https://chiragajmeraapi.onrender.com/api/products?name=${inputid1}`
+  fetch_api(searchapi1)
+ 
+}
+
+
+const debounce = (func,delay)=>{
+ 
+  if(timeId){
+    clearTimeout(timeId);
+  }
+ timeId = setTimeout(() => {
+  func()
+ }, delay);
+}
+  </script>
+</html>
+>>>>>>> 8e31cd61c2af8fa1599966a29ceef32cf3ab80ea
