@@ -177,10 +177,11 @@ td a:hover {
 #imagesection {
   position: relative;
   margin-bottom: 5em;
+  height: 80vh;
+  overflow: hidden;
 }
 #divaboveimage {
   position: absolute;
-  /* border: 1px solid; */
   width: 30%;
   display: flex;
   margin: 3em;
@@ -190,6 +191,7 @@ td a:hover {
   padding: 4em;
 }
 #divaboveimage p {
+  margin: auto;
   font-size: 4em;
   color: rgba(0, 0, 0, 0.807);
   margin-bottom: 0;
@@ -362,7 +364,7 @@ td a:hover {
   width: 60%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
+  padding-bottom: 2em;
 }
 #greenbanner2left p {
   color: rgba(255, 255, 255, 0.945);
@@ -529,7 +531,7 @@ td a:hover {
   }
   #greenbanner2left{
     margin: auto;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
   }
   #greenbanner2left p {
     color: rgba(255, 255, 255, 0.945);
@@ -541,6 +543,56 @@ td a:hover {
   #greenbanner2right{
     display: none;
   }
+  td a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.572);
+    transition: 0.3s;
+    font-size: x-small;
+  }
+  #divaboveimage p {
+    font-size: 3em;
+    color: rgba(0, 0, 0, 0.807);
+    margin-bottom: 0;
+  }
+  #divaboveimage a {
+    font-size: x-small;
+  }
+  #stories-card-section {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1em;
+    height: 100vh;
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+  .stories-card {
+    width: 2%;
+    margin: auto;
+    padding: 2em;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 1em;
+    border: 0.1px solid var(--green);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: width 0.7s ease;
+  }
+  .stories-card:hover {
+    cursor: pointer;
+  }
+  #upper-story-card img {
+    border-radius: 50%;
+    width: 60%;
+  }
+  #footertable {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 2em 0;
+  }
+  #footer{
+    width: 100%;
+  }
+  
 }
 
 @media screen and (max-width: 480px) {
@@ -557,5 +609,10 @@ td a:hover {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+  }
+  #divaboveimage p {
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.807);
+    margin-bottom: 0;
   }
 }
