@@ -1,8 +1,9 @@
 #suggestion{
   padding: 10px 0;
   margin: auto;
-  display: flex;
+  display: none;
   justify-content: space-between;
+  
 }
 .sp{
   margin: auto;
