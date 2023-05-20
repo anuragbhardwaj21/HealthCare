@@ -607,11 +607,17 @@ td a:hover {
   #footer{
     width: 100%;
   }
+  #navbar{
+    display: none;
+  }
   
 }
 
 @media screen and (max-width: 480px) {
   /* Mobile screens */
+  #navbar{
+    display: none;
+  }
   #cardsection {
     grid-template-columns: 1fr;
   }
