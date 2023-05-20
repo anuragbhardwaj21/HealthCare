@@ -215,12 +215,7 @@ a{
                 left: 0;
                 visibility: visible;
       }
-      .nnn {
-        background-image: url("https://media.istockphoto.com/id/532963888/photo/medical-or-science-with-soft-light-background.jpg?b=1&s=170667a&w=0&k=20&c=KVuJwHqf-BYyhYT4wGc0iISYAY1Cw6-KdcTc7GgGmDg=");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
+    
 
     .password-container {
         position: relative;
