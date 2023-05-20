@@ -625,7 +625,7 @@ td a:hover {
   #contact-form-second-div,
   #contact-form-third-div {
     width: 80%;
-    /* border: 1px solid; */
+   
     margin: auto;
     display: flex;
     justify-content: space-between;
