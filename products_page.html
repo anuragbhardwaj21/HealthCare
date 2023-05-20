@@ -72,7 +72,7 @@
             line-height: inherit;
             outline: none;
             border: 1px solid rgb(222, 213, 213);
-            padding-left: 15px;
+           
         }
 
         select::-ms-expand {
@@ -85,9 +85,10 @@
             max-width: 30ch;
             margin-left: auto;
             padding: 0.25em 0.5em;
-            font-size: 1.25rem;
+            /* font-size: 1.25rem; */
             cursor: pointer;
             line-height: 1.8;
+           
 
 
         }
@@ -97,10 +98,13 @@
             min-width: 15ch;
             max-width: 30ch;
             margin-right: auto;
-            padding: 0.25em 0.5em;
-            font-size: 1.25rem;
+            padding: 0.25em 0;
+            /* font-size: 1.25rem; */
             cursor: pointer;
             line-height: 2;
+            border-bottom: 0.5px solid rgba(58, 57, 57, 0.852);
+            margin: auto;
+            
 
 
         }
@@ -110,10 +114,13 @@
             min-width: 15ch;
             max-width: 30ch;
             margin-right: auto;
-            padding: 0.25em 0.5em;
-            font-size: 1.25rem;
+            padding: 0.25em 0;
+            /* font-size: 1.25rem; */
             cursor: pointer;
             line-height: 2;
+            border-bottom: 0.5px solid rgba(58, 57, 57, 0.852);
+            margin: auto;
+            
         }
 
         .select4 {
@@ -121,10 +128,13 @@
             min-width: 15ch;
             max-width: 30ch;
             margin-right: auto;
-            padding: 0.25em 0.5em;
-            font-size: 1.25rem;
+            padding: 0.25em 0;
+            /* font-size: 1.25rem; */
             cursor: pointer;
             line-height: 2;
+            border-bottom: 0.5px solid rgba(58, 57, 57, 0.852);
+            margin: auto;
+            
         }
 
         #content {
@@ -141,7 +151,7 @@
         .box {
             display: flex;
             flex-direction: column;
-
+            padding: 7px;
             align-items: center;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             margin: auto;
@@ -150,6 +160,10 @@
             height: auto;
             text-align: center;
             cursor: pointer;
+        }
+        .brand{
+            padding: 10px;
+            color: rgba(27, 27, 27, 0.833);
         }
         .wishdiv{
             height: 50px;
@@ -173,6 +187,11 @@
             border: none;
             outline: none;
             scroll-behavior: smooth;
+        }
+        #fakeprice{
+            color: rgba(0, 0, 0, 0.534);
+            font-size: small;
+            text-decoration: line-through;
         }
 
         .box>button {
@@ -275,7 +294,7 @@
 
 
                     <select name="" id="standard-select2" onchange="sortbypric()">
-                        <option value="">Sort By:Company</option>
+                        <option value="">Sort By : Company</option>
                         <option value="Eisai Pharmaceuticals India Pvt Ltd">Eisai Pharmaceuticals India Pvt Ltd</option>
                         <option value="Glaxo SmithKline Pharmaceuticals Ltd">Glaxo SmithKline Pharmaceuticals Ltd
                         </option>
@@ -294,7 +313,7 @@
 
                 <div class="select3">
                     <select id="standard-select3" onchange="sortname()">
-                        <option value="">Sort By: Name</option>
+                        <option value="">Sort By : Name</option>
                         <option value="name">Ascending</option>
                         <option value="-name">Descending</option>
 
@@ -302,7 +321,7 @@
                 </div>
                 <div class="select4">
                     <select id="standard-select4" onchange="sortname()">
-                        <option value="">Sort By: Disease</option>
+                        <option value="">Sort By : Disease</option>
                         <option value="Alzheimer's disease">Alzheimer's disease</option>
                         <option value="Treatment of Bacterial infections">Treatment of Bacterial infections</option>
                         <option value="In Treatment of Treatment of Anxiety">In Treatment of Treatment of Anxiety

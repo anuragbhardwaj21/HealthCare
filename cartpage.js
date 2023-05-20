@@ -3,7 +3,7 @@ if(getarr.length==0)
 {
   window.location.href = "emptycart.html"
 }
-
+console.log(getarr)
 display()
 function display() {
   getarr.map(function (ele, b) {
@@ -14,34 +14,44 @@ function display() {
 
     let image = document.createElement('img')
     image.setAttribute('src',ele.img)
-    image.setAttribute('class','picture')
+    image.setAttribute('class','picture');
 
-
-
-     var tquantity = document.createElement("p");
+    var tquantity = document.createElement("p");
      tquantity.setAttribute("class", "quant");
-     tquantity.textContent = ele.quantity;
+     tquantity.textContent = "Units "+ele.quantity;
     
     var price = document.createElement("p");
     price.setAttribute("class", "price");
-    price.textContent = "₹" + ele.mrp;
+    price.textContent ="Price/Units "+ "₹" + ele.mrp;
 
     var tprice = document.createElement("p");
     tprice.setAttribute("class", "tprice");
-    tprice.textContent = "₹" + (ele.mrp)*(ele.quantity);
+    tprice.textContent ="Total MRP "+ "₹" + (ele.mrp)*(ele.quantity);
 
     let btn = document.createElement("button")
-    btn.textContent = "Remove"
-    btn.setAttribute("class","deleted")
-    btn.style.backgroundColor = "Red"
-    btn.style.border = "none"
+   
+    btn.setAttribute("class","btn btn-delete")
+    let s1 = document.createElement("span")
+    s1.setAttribute("class","mdi mdi-delete mdi-24px")
+    let s2 = document.createElement("span")
+    s1.setAttribute("class","mdi mdi-delete-empty mdi-24px")
+    let s3 = document.createElement("span")
+    s3.textContent = "Delete"
+    btn.append(s1,s2,s3)
+
+    
+
     btn.addEventListener("click",function(){
       delete_item(ele)
     })
+    let describe = document.createElement("div")
+    describe.setAttribute("class","describe")
+    describe.append(name,price,tquantity,tprice,btn)
+
 
     let div1 = document.createElement('div')
     div1.setAttribute("class","box")
-    div1.append(name,price,tquantity,tprice,btn, image)
+    div1.append(describe,image)
 
     document.getElementById("medicine").append(div1)
   });

@@ -7,41 +7,91 @@ body {
 .box {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
+  
+ 
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
 }
 
-.content {
+/* .content {
   flex: 1;
   display: flex;
+  border: 2px solid green;
   flex-direction: column;
-}
+} */
 
+.describe{
+  display: block;
+  padding: 10px;
+  
+  
+}
 .picture {
-  width: 80px; /* Adjust the width as needed */
-  margin-right: 10px;
-  margin:auto; /* Add some space between the image and text */
+  width: 40%; /* Adjust the width as needed */
+  height: 40%;
+ 
+ margin-top: 5px;
+ margin-left: 130px;
+
+
 }
 
-.image-container {
+
+
+body {
+  margin: 32px;
+}
+
+.btn {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  background: none;
+  border: 1px solid lighten(gray, 24%);
+  height: 48px;
+  padding: 0 24px 0 16px;
+  letter-spacing: .25px;
+  border-radius: 24px;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  .mdi {
+    margin-right: 8px;
+  }
 }
 
-.quant {
-  margin-top: 5px; /* Add some space between the image and quantity */
+.btn-delete {
+  font-size: 16px;
+  color: red;
+  
+  >.mdi-delete-empty {
+    display: none;
+  }
+  
+  &:hover {
+    background-color: lighten(red, 48%);
+    
+    >.mdi-delete-empty {
+      display: block;
+    }
+    
+    >.mdi-delete {
+      display: none;
+    }
+  }
+  
+
+  
+  &:focus {
+    box-shadow: 0 0 0 4px lighten(red, 40%);
+  }
 }
 
-.mrp {
-  text-decoration: line-through; /* Add a line-through to the MRP */
-  color: #999; /* Adjust color as desired */
-}
 
-.tprice {
-  margin-top: 10px; /* Add some space below the MRP */
-}
+
+
 
 #payment_header {
   display: flex;
@@ -51,10 +101,7 @@ body {
   background-color: #f1f1f1;
 }
 
-#mg_home {
-  width: 50px;
-  height: 50px;
-}
+
 
 #container {
   display: flex;

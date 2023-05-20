@@ -33,13 +33,17 @@ function display(e)
     image.setAttribute('src',ele.img)
 
     let name = document.createElement('p')
+    
     name.textContent = ele.name;
 
     let brand = document.createElement('p')
+    brand.setAttribute("class","brand")
     brand.textContent = ele.brand;
     
     let mrp = document.createElement('p')
-    mrp.textContent = `₹${ele.mrp}`;
+    mrp.innerHTML =   ` <span id="fakeprice">₹${ele.mrp+5.7}</span> ₹${ele.mrp} `;
+    
+    
 
     let addbtn = document.createElement('button')
     addbtn.textContent = "ADD TO CART"
