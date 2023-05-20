@@ -227,13 +227,19 @@ function contactFormRender(){
   <div id="contact-form-first-div">
     <select id="chooseDepartment">
       <option value="">Choose Department</option>
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
+      <option value="option1">Cardiology</option>
+      <option value="option2">Pediatrics</option>
+      <option value="option3">Neurology</option>
+      <option value="option4">Orthopedics</option>
+      <option value="option5">Dermatology</option>
     </select>
     <select id="ChooseSpecialist">
       <option value="">Choose Specialist</option>
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
+      <option value="option1">Dr. Benjamin Davis</option>
+      <option value="option2">Dr. Emily Roberts</option>
+      <option value="option3">Dr. Michael Anderson</option>
+      <option value="option4">Dr. Sarah Thompson</option>
+      <option value="option5">Dr. Christopher Wilson</option>
     </select>
   </div>
   <div id="contact-form-second-div">

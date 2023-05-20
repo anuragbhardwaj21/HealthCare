@@ -493,7 +493,11 @@ td a:hover {
   border: none;
   color: #00000095;
 }
-
+@media screen and (max-width: 900px) {
+#navbar {
+  display:none;
+}
+}
 @media screen and (max-width: 768px) {
   /* Small screens */
   #cardsection {
