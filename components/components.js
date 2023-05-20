@@ -1,9 +1,9 @@
 function navbar() {
   return `
     <div id="leftNavItems">
-        <a href="../HealthCare/productpage.html"> Medicines </a>
+        <a href="../HealthCare/products_page.html"> Medicines </a>
         <a href=""> Doctor</a>
-        <a href="../HealthCare/productpage.html"> Pharmacy</a>
+        <a href="../HealthCare/products_page.html"> Pharmacy</a>
         <a href=""> Other Services</a>
     </div>
     <div id="searchNav">
@@ -12,7 +12,7 @@ function navbar() {
     </div>
     <div id="rightNavItems">
         <a href="../HealthCare/index.html">🏠</a>
-        <a href="">🛒</a>
+        <a href="../HealthCare/cartpage.html">🛒</a>
         <a href="../HealthCare/consultnow.html">Consult Now</a>
         <a href="login.html">Login/Signup</a>
     </div>
