@@ -131,6 +131,7 @@ function search(){
   
   if(inputid1=="")
   {
+    
     window.location.reload()
   }
   
@@ -141,7 +142,7 @@ function search(){
 
 
 const debounce = (func,delay)=>{
- 
+ document.getElementById("suggestion").style.display = "flex"
   if(timeId){
     clearTimeout(timeId);
   }
